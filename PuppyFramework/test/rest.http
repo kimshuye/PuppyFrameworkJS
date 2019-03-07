@@ -1,0 +1,39 @@
+###
+POST http://localhost:3000/membership/member/add
+content-type: application/json
+
+   [ {
+        "firstName": "Apaichon",
+        "lastName": "Punopas",
+        "dob": "1979-11-13"
+    }
+   ]
+
+###
+PUT http://localhost:3000/membership/member/edit
+content-type: application/json
+
+{
+    "data":{
+        "firstName":"Puppy",
+        "email":"apaichon@gmail.com"
+    },
+    "condition":{
+        "firstName":"Apaichon"
+    }
+}
+
+###
+DELETE http://localhost:3000/membership/member/delete
+content-type: application/json
+
+{
+    "condition":{
+        "firstName":"Apaichon"
+    }
+}
+
+###
+GET http://localhost:3000/membership/member/get
+
+

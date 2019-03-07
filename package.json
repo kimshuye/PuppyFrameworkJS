@@ -1,0 +1,24 @@
+{
+  "name": "nodejs_for_enterprise",
+  "version": "3.0.0",
+  "description": "Nodejs Api Pattern for Enterprise",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "NodeJS",
+    "Api",
+    "Enterprise"
+  ],
+  "author": "Apaichon Punopas",
+  "license": "MIT",
+  "dependencies": {
+    "Faker": "^0.7.2",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "mongodb": "^3.1.13"
+  }
+}
