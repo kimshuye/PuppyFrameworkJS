@@ -1,4 +1,4 @@
-const Member = require('./modules/membership/Member');
+const Member = require('./membership/Member');
 
 module.exports = {
     Member

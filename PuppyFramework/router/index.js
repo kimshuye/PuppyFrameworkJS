@@ -1,5 +1,5 @@
-const RouterBase = require('./RouterBase');
+const { MemberRouter } = require('./membership')
 
 module.exports = {
-    RouterBase
+    MemberRouter
 }

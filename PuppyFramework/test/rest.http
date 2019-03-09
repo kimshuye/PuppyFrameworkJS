@@ -3,9 +3,9 @@ POST http://localhost:3000/membership/member/add
 content-type: application/json
 
    [ {
-        "firstName": "Apaichon",
-        "lastName": "Punopas",
-        "dob": "1979-11-13"
+        "firstName": "๋John",
+        "lastName": "Doe",
+        "dob": "1990-11-11"
     }
    ]
 
@@ -15,11 +15,11 @@ content-type: application/json
 
 {
     "data":{
-        "firstName":"Puppy",
-        "email":"apaichon@gmail.com"
+        "firstName":"Joe",
+        "email":"joe@gmail.com"
     },
     "condition":{
-        "firstName":"Apaichon"
+        "firstName":"John"
     }
 }
 
@@ -29,11 +29,29 @@ content-type: application/json
 
 {
     "condition":{
-        "firstName":"Apaichon"
+        "firstName":"Joe"
     }
 }
 
 ###
 GET http://localhost:3000/membership/member/get
+
+###
+POST http://localhost:3000/api/membership/member/add
+content-type: application/json
+application: My Members
+module: Membership
+objectname: Member
+objectmethod: Add
+validator: MemberValidator
+
+[
+   {
+        "firstName": "Apahchon",
+        "lastName": "DoeAXRE",
+        "gender": 0,
+        "registeredDate": "2019-03-09"
+    }
+]  
 
 

@@ -3,7 +3,8 @@ const DbServer = {
       type: 'mongodb',
       host: 'localhost',
       port: 27017,
-      connectionString: 'mongodb://localhost:27017/membership'
+      connectionString: 'mongodb://localhost:27017/membership',
+      logPath: 'logs'
     } 
   }
   

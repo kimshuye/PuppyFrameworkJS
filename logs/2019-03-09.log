@@ -1,0 +1,11 @@
+{"uuid":"7a36aa41-9332-47b1-9169-6c5a16ed8de2","sessionID":"jaNawhaBb_M54CBRNKEMFaR_Ub_fLbFL","ip":"::ffff:127.0.0.1","application":"My Members","className":"","method":"","os":{"family":"Other","major":"0","minor":"0","patch":"0"},"device":{"family":"Other","major":"0","minor":"0","patch":"0"},"browser":"Other 0.0.0 / Other 0.0.0","level":"info","transType":"input"}
+undefined
+undefined
+{"uuid":"fbf9f518-808b-4293-a35b-6717e27d59e8","sessionID":"8xOz6MF3W-RELqoGiPQK09DAmhlgR_ey","ip":"::ffff:127.0.0.1","application":"My Members","className":"Member","method":"Add","os":{"family":"Other","major":"0","minor":"0","patch":"0"},"device":{"family":"Other","major":"0","minor":"0","patch":"0"},"browser":"Other 0.0.0 / Other 0.0.0","level":"info","transType":"input"}
+{"uuid":"fbf9f518-808b-4293-a35b-6717e27d59e8","sessionID":"8xOz6MF3W-RELqoGiPQK09DAmhlgR_ey","code":200,"status":"completed","message":"","transType":"output","level":"info"}
+undefined
+undefined
+{"uuid":"c54dd612-e1ae-4a2d-948d-e036e2ca130f","sessionID":"xwAx7sopVdWF25TSFDZ8Qnyp6qyFz4qy","ip":"::ffff:127.0.0.1","application":"My Members","className":"Member","method":"Add","os":{"family":"Other","major":"0","minor":"0","patch":"0"},"device":{"family":"Other","major":"0","minor":"0","patch":"0"},"browser":"Other 0.0.0 / Other 0.0.0","level":"info","transType":"input"}
+{"uuid":"c54dd612-e1ae-4a2d-948d-e036e2ca130f","sessionID":"xwAx7sopVdWF25TSFDZ8Qnyp6qyFz4qy","code":200,"status":"completed","message":"","transType":"output","level":"info","timestamp":1552130052672}
+{"uuid":"fe2c43c9-c413-48a4-8d3d-551072b7dbf3","sessionID":"mEHnO0dABLYjXnfUy7G2wXD3d0ATzf0x","ip":"::ffff:127.0.0.1","application":"My Members","className":"Member","method":"Add","os":{"family":"Other","major":"0","minor":"0","patch":"0"},"device":{"family":"Other","major":"0","minor":"0","patch":"0"},"browser":"Other 0.0.0 / Other 0.0.0","level":"info","transType":"input","timestamp":1552130199964}
+{"uuid":"fe2c43c9-c413-48a4-8d3d-551072b7dbf3","sessionID":"mEHnO0dABLYjXnfUy7G2wXD3d0ATzf0x","code":200,"status":"completed","message":"","transType":"output","level":"info","timestamp":1552130201125}

@@ -1,4 +1,4 @@
-const RouterBase = require('./RouterBase');
+const RouterBase = require('../RouterBase');
 
 class MemberRouter extends RouterBase {
     
@@ -6,3 +6,5 @@ class MemberRouter extends RouterBase {
         super(config);
     }
 }
+
+module.exports = MemberRouter;

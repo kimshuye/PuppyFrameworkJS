@@ -1,4 +1,4 @@
-const BizBase = require('../../BizBase');
+const BizBase = require('../BizBase');
 
 class Member extends BizBase {
     constructor (config) {

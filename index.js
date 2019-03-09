@@ -22,43 +22,53 @@ const server = new Server ();
 /*asyncLabs.RunAsyncAwait()
 .then(finish => console.log(finish));*/
 
-const { Server } = require('./PuppyFramework/middleware')
+/*const PuppyFramework = require('puppyframework');
+const Server = PuppyFramework.Middlewares.Server;
+const MemberRouter = PuppyFramework.Routers.MemberRouter;
+const Member = PuppyFramework.BusinessObjects.Member;
+const { DbServer, MemberUrl } = require('./config')
+
+const member = new Member(DbServer.dev);
+let serverConfig = {
+    routeUrl : MemberUrl,
+    bizObject : member 
+};
 let app = new Server();
-const { RouterBase } = require('./PuppyFramework/router');
-//console.log(RouterBase);
-
-/*const express = require('express');
-bodyParser = require('body-parser');
-
-let app = new express();
-app.use(bodyParser.json());*/
-
-const { Member } = require('./PuppyFramework/biz')
-
-const config = {
-    type: 'mongodb',
-    host: 'localhost',
-    port: 27017,
-    connectionString: 'mongodb://localhost:27017/membership'
-}
-
-const member = new Member(config);
-
-const serverConfig = {
-    routeUrl: {
-        ADD_URL: '/membership/member/add',
-        EDIT_URL: '/membership/member/edit',
-        DELETE_URL: '/membership/member/delete',
-        GET_URL: '/membership/member/get'
-    },
-    bizObject: member
-}
-
-let router = new RouterBase(serverConfig);
+let router = new MemberRouter(serverConfig);
 app.Use(router.Router);
+*/
 
-//let { router } = require('./PuppyFramework/router/RouterBase')
-//console.log(router.Router)
-/*app.use(router.Router);
-app.listen(3000);
-console.log('running at port: 3000');*/
+
+const { Server } = require('./PuppyFramework/middleware')
+const { MemberRouter } = require('./PuppyFramework/router');
+const { Member } = require('./PuppyFramework/biz')
+//const { TransformPathToObject, Execute } = require('./PuppyFramework/facade')
+const server = new Server ();
+const { DbServer, MemberUrl } = require('./config')
+const { FacadeRestApi } = require('./PuppyFramework/facade');
+
+/*let Invoke = async(req, res, next) => {
+    let paths = req.path.split('/')
+   try {
+        //transform ojbect
+        let { object, method } = await TransformPathToObject(paths);
+        console.log(object, method);
+        let obj = new object(DbServer.dev);
+        //execute
+       let result = await Execute({
+            object: obj,
+            input: req.body,
+            method: method
+        });
+        res.send(result);
+    }
+    catch(err) {
+        res.send(err)
+    }
+    //transform result
+    next()
+}*/
+
+const facade = new FacadeRestApi(DbServer.dev);
+server.All('/api/:module/:object/:method',facade.Execute);
+
