@@ -1,5 +1,9 @@
+/**
+ * @class DataAdapter
+ * @classdesc This class is managing difference data provider.
+ */
 class DataAdapter {
-    
+
     constructor (config) {
         let Db;
         switch (config.type) {

@@ -40,7 +40,7 @@ GET http://localhost:3000/membership/member/get
 POST http://localhost:3000/api/membership/member/add
 content-type: application/json
 application: My Members
-module: Membership
+module: membership
 objectname: Member
 objectmethod: Add
 validator: MemberValidator
@@ -53,5 +53,35 @@ validator: MemberValidator
         "registeredDate": "2019-03-09"
     }
 ]  
+
+###
+POST http://localhost:3000/api/security/authentication/login
+content-type: application/json
+application: My Members
+module: security
+objectname: Authentication
+objectmethod: LogIn
+validator: UserValidator
+
+{
+    "username": "apaichon@hotmail.com",
+    "password": "p@ssw0rd"
+}
+
+###
+POST http://localhost:3000/api/security/authentication/login
+content-type: application/json
+application: My Members
+module: security
+objectname: Authentication
+objectmethod: LogOut
+validator: SeesionValidator
+
+{
+    "username": "apaichon@hotmail.com",
+    "sessionID": "WSiMISKlOItC6_k_0y65mP7byQkE4N5r"
+}
+  
+  
 
 

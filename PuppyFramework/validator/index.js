@@ -1,5 +1,8 @@
 const MemberValidator = require('./membership/MemberValidator');
+const { SessionInfoValidator, UserInfoValidator } = require('./security');
 
 module.exports = {
-    MemberValidator
+    MemberValidator,
+    SessionInfoValidator,
+    UserInfoValidator
 }

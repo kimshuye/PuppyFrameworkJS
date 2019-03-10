@@ -39,13 +39,13 @@ app.Use(router.Router);
 */
 
 
-const { Server } = require('./PuppyFramework/middleware')
-const { MemberRouter } = require('./PuppyFramework/router');
-const { Member } = require('./PuppyFramework/biz')
+const { Server } = require('PuppyFramework/middleware')
+const { MemberRouter } = require('PuppyFramework/router');
+const { Member } = require('PuppyFramework/biz')
 //const { TransformPathToObject, Execute } = require('./PuppyFramework/facade')
 const server = new Server ();
 const { DbServer, MemberUrl } = require('./config')
-const { FacadeRestApi } = require('./PuppyFramework/facade');
+const { FacadeRestApi } = require('PuppyFramework/facade');
 
 /*let Invoke = async(req, res, next) => {
     let paths = req.path.split('/')

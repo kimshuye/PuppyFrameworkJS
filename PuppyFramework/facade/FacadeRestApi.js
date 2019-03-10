@@ -3,6 +3,7 @@ const { Text } = require('../utils');
 const moment = require('moment');
 const Validate  = require('validate.js');
 const Logger = require('./Logger');
+const Security = require('./Security');
 let shared = {}
 
 Validate.extend(Validate.validators.datetime, {
@@ -48,13 +49,18 @@ class FacadeRestApi {
             throw Message(530);
         }
 
-        const input = (req.method ==='GET'? req.query: req.body);
+        let input = (req.method ==='GET'? req.query: req.body);
+        if(objectname ==='Authentication' && objectmethod === 'LogIn') {
+            input.sessionID = req.sessionID;
+        }
+        
         let objClass = require('../biz')[objectname];
         let businessObject = {};
         businessObject.objectName = objectname;
         businessObject.object = new objClass(shared.config);
         businessObject.method = objectmethod;
         businessObject.input = input;
+
         return businessObject;
         
     }
@@ -78,18 +84,6 @@ class FacadeRestApi {
         return result;
     }
 
-    static async IsAuthorize (req, res, next) {
-
-    }
-
-    static async AddRequestLog (req, res, next) {
-
-    }
-
-    static async AddReposnseLog (req, res, next) {
-
-    }
-
     static async Invoke (businessObject) {
           let result = await  businessObject.object[businessObject.method](businessObject.input);
           let msg = Message(200);
@@ -100,6 +94,16 @@ class FacadeRestApi {
     async Execute (req, res, next) {
         let result = {};
         try {
+            Security.SetConfig(shared.config);
+            let isExcepted = await Security.IsExceptApi(req);
+            if(!isExcepted) {
+                // check is logon
+                let isValidSession = await Security.ValidateSession(req);
+                if (!isValidSession) throw Message(401);
+                // check permission
+                let isGrant = await Security.HasPermission(req);
+                if (!isGrant) throw Message(401);
+            }
             let bo = FacadeRestApi.ExtractParameters(req);
             let isValid = FacadeRestApi.IsValidInput(req);
             Logger.WriteReqLog(req, shared.config.logPath);
@@ -111,10 +115,10 @@ class FacadeRestApi {
                 result = err;
             } else {
                 result = Message(500);
-                result.message = JSON.stringify(err)
+                result.message = String(err)
             }
         }
-        Logger.WriteResLog(req, result,shared.config.logPath);
+        if (req.log) Logger.WriteResLog(req, result,shared.config.logPath);
         res.send(result);
     }
 }

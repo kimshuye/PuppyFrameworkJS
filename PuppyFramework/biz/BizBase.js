@@ -23,9 +23,19 @@ class BizBase {
         let result = await this.Execute('Update', dataWithCondition);
         return result;
     }
+
+    async EditAdd (dataWithCondition) {
+        let result = await this.Execute('Upsert', dataWithCondition);
+        return result;
+    }
     
     async Find (condition) {
         let result = await this.Execute('Find', condition);
+        return result;
+    }
+
+    async FindOne (condition) {
+        let result = await this.Execute('FindOne', condition);
         return result;
     }
 
