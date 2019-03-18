@@ -1,5 +1,5 @@
 ###
-POST http://localhost:3000/membership/member/add
+POST http://localhost:3001/membership/member/add
 content-type: application/json
 
    [ {
@@ -10,7 +10,7 @@ content-type: application/json
    ]
 
 ###
-PUT http://localhost:3000/membership/member/edit
+PUT http://localhost:3001/membership/member/edit
 content-type: application/json
 
 {
@@ -24,7 +24,7 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/membership/member/delete
+DELETE http://localhost:3001/membership/member/delete
 content-type: application/json
 
 {
@@ -34,10 +34,10 @@ content-type: application/json
 }
 
 ###
-GET http://localhost:3000/membership/member/get
+GET http://localhost:3001/membership/member/get
 
 ###
-POST http://localhost:3000/api/membership/member/add
+POST http://localhost:3001/api/membership/member/add
 content-type: application/json
 application: My Members
 module: membership
@@ -55,7 +55,7 @@ validator: MemberValidator
 ]  
 
 ###
-POST http://localhost:3000/api/security/authentication/login
+POST http://localhost:3001/api/security/authentication/login
 content-type: application/json
 application: My Members
 module: security
@@ -69,7 +69,7 @@ validator: UserValidator
 }
 
 ###
-POST http://localhost:3000/api/security/authentication/login
+POST http://localhost:3001/api/security/authentication/login
 content-type: application/json
 application: My Members
 module: security

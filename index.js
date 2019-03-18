@@ -1,17 +1,14 @@
-/*
-const RunLab = require('./labs/runlab');
-const lab = new RunLab();
 
-for (let i = 1; i< 14; i++){
-    lab.run("lab"+i);
-}
-*/
+// const RunLab = require('./labs/runlab');
+// const lab = new RunLab();
 
-/*
-const { Server } = require('./server/index');
-const server = new Server ();
-*/
+// for (let i = 1; i< 14; i++){
+//     lab.run("lab"+i);
+// }
 
+
+// const { Server } = require('./server/index');
+// const server = new Server ();
 
 // var { AsyncLabs } = require('./labs');
 // let asyncLabs = new AsyncLabs('mongodbcallback');
@@ -19,33 +16,37 @@ const server = new Server ();
 
 // let asyncLabs = new AsyncLabs('mongodb');
 // asyncLabs.RunAsyncPromise();
-/*asyncLabs.RunAsyncAwait()
-.then(finish => console.log(finish));*/
+// asyncLabs.RunAsyncAwait()
+// .then(finish => console.log(finish));
 
-/*const PuppyFramework = require('puppyframework');
-const Server = PuppyFramework.Middlewares.Server;
-const MemberRouter = PuppyFramework.Routers.MemberRouter;
-const Member = PuppyFramework.BusinessObjects.Member;
-const { DbServer, MemberUrl } = require('./config')
+// const { Server } = require('./PuppyFramework/middleware')
+// const { MemberRouter } = require('./PuppyFramework/router');
+// const { Member } = require('./PuppyFramework/biz')
+// const { DbServer, MemberUrl } = require('./config')
 
-const member = new Member(DbServer.dev);
-let serverConfig = {
-    routeUrl : MemberUrl,
-    bizObject : member 
-};
-let app = new Server();
-let router = new MemberRouter(serverConfig);
-app.Use(router.Router);
-*/
+// const member = new Member(DbServer.dev);
+// let serverConfig = {
+//    routeUrl : MemberUrl,
+//    bizObject : member
+// };
+// let app = new Server();
+// let router = new MemberRouter(serverConfig);
+// app.Use(router.Router);
 
+// const RunTest = require('./PuppyFramework/test/GenerateTest')
+// const { TestList } = require('./config/TestList');
+// console.log(TestList);
+// RunTest.GenerateTestFile();
+// let r = newRunTest ();
+// r.GenTestFile();
 
-const { Server } = require('PuppyFramework/middleware')
-const { MemberRouter } = require('PuppyFramework/router');
-const { Member } = require('PuppyFramework/biz')
-//const { TransformPathToObject, Execute } = require('./PuppyFramework/facade')
-const server = new Server ();
-const { DbServer, MemberUrl } = require('./config')
-const { FacadeRestApi } = require('PuppyFramework/facade');
+// const { Server } = require('PuppyFramework/middleware')
+// const { MemberRouter } = require('PuppyFramework/router');
+// const { Member } = require('PuppyFramework/biz')
+// //const { TransformPathToObject, Execute } = require('./PuppyFramework/facade')
+// const server = new Server ();
+// const { DbServer, MemberUrl } = require('./config')
+// const { FacadeRestApi } = require('PuppyFramework/facade');
 
 /*let Invoke = async(req, res, next) => {
     let paths = req.path.split('/')
@@ -69,6 +70,20 @@ const { FacadeRestApi } = require('PuppyFramework/facade');
     next()
 }*/
 
+// const facade = new FacadeRestApi(DbServer.dev);
+// server.All('/api/:module/:object/:method',facade.Execute);
+
+const { Server } = require('./PuppyFramework/middleware')
+const { MemberRouter } = require('./PuppyFramework/router');
+const { Member } = require('./PuppyFramework/biz')
+const server = new Server ();
+const { DbServer, MemberUrl } = require('./config')
+const { FacadeRestApi } = require('./PuppyFramework/facade');
+
 const facade = new FacadeRestApi(DbServer.dev);
 server.All('/api/:module/:object/:method',facade.Execute);
+
+
+
+
 

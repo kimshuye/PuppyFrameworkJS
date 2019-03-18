@@ -4,7 +4,7 @@ const { Session } = require('./Session');
 
 class Server {
 
-    constructor (port = 3000) {
+    constructor (port = 3001) {
         this.PORT = port;
         const express = require('express');
         this.bodyParser = require('body-parser');

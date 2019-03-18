@@ -1,7 +1,7 @@
 class RunTest {
 
     static GenTestFile () {   
-        const GenerateTest = require('./PuppyFramework/test/GenerateTest');
+        const GenerateTest = require('./GenerateTest');
         const {TestList} = require('./config/TestList');
         const genTest = new GenerateTest(TestList);
         genTest.Generate();
